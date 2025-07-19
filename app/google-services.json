@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "599209929859",
+    "project_id": "jot-n--roll",
+    "storage_bucket": "jot-n--roll.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599209929859:android:24860e1fd7f03cdf44bfb6",
+        "android_client_info": {
+          "package_name": "com.example.jotnroll"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTDMiuO6BCkJ8JGEnqwvuzSWxbL4qn3YM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
