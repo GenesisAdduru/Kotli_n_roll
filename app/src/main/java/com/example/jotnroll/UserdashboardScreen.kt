@@ -1,20 +1,34 @@
 package com.example.jotnroll
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.jotnroll.databinding.ActivityUserdashboardScreenBinding
 
 class UserdashboardScreen : AppCompatActivity() {
+
+    private lateinit var binding: ActivityUserdashboardScreenBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_userdashboard_screen)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityUserdashboardScreenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnLogout.setOnClickListener {
+            startActivity(Intent(this, LoginScreen::class.java))
+            finish()
+        }
+
+        binding.btnCreateEntry.setOnClickListener {
+            startActivity(Intent(this, DiaryentryScreen::class.java))
+        }
+
+        binding.btnAboutUs.setOnClickListener {
+            startActivity(Intent(this, AboutusScreen::class.java))
+        }
+
+        binding.btnViewEntries.setOnClickListener {
+            startActivity(Intent(this, ViewEntry::class.java))
         }
     }
 }
