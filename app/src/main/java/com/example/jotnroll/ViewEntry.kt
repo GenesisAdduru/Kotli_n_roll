@@ -13,11 +13,13 @@ class ViewEntry : AppCompatActivity() {
         binding = ActivityViewEntryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // ✅ Get the extras passed from DiaryAdapter
         val userName = intent.getStringExtra("userName") ?: ""
         val title = intent.getStringExtra("title") ?: ""
         val date = intent.getStringExtra("date") ?: ""
         val content = intent.getStringExtra("content") ?: ""
 
+        // ✅ Show on screen
         binding.textViewViewName.text = userName
         binding.textViewViewTitle.text = title
         binding.textViewViewDate.text = date

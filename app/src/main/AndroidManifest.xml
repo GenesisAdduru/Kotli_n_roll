@@ -13,10 +13,10 @@
         android:theme="@style/Theme.JotNRoll"
         tools:targetApi="31">
         <activity
-            android:name=".ItemDiaryEntry2"
+            android:name=".DiaryAdapter"
             android:exported="false" />
         <activity
-            android:name=".DiaryAdapter"
+            android:name=".ItemDiaryEntry2"
             android:exported="false" />
         <activity
             android:name=".ViewEntry"

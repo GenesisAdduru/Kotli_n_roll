@@ -1,3 +1,4 @@
+// 📄 ItemDiaryEntry.kt
 package com.example.jotnroll
 
 import android.os.Bundle
@@ -7,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jotnroll.databinding.ActivityItemDiaryEntryBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
 
 class ItemDiaryEntry : AppCompatActivity() {
 
@@ -37,14 +37,14 @@ class ItemDiaryEntry : AppCompatActivity() {
         val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
 
         FirebaseFirestore.getInstance().collection("entries")
-            .whereEqualTo("userId", uid)                      // 🔍 Filter by current user
-            .orderBy("timestamp", Query.Direction.DESCENDING) // 🕓 Sort by latest first
+            .whereEqualTo("userId", uid)
+            // .orderBy("timestamp", Query.Direction.DESCENDING) // Temporarily removed for bug fix
             .get()
             .addOnSuccessListener { result ->
                 diaryList.clear()
 
                 for (doc in result) {
-                    Log.d("FIREBASE_ENTRY", doc.data.toString()) // ✅ Debugging: see what is fetched
+                    Log.d("FIREBASE_ENTRY", doc.data.toString())
 
                     val entry = DiaryEntry(
                         id       = doc.id,
@@ -63,5 +63,4 @@ class ItemDiaryEntry : AppCompatActivity() {
                 Log.e("FIREBASE_ERROR", "Failed to fetch entries: ${e.message}")
             }
     }
-
 }

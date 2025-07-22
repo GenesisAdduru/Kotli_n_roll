@@ -1,3 +1,4 @@
+// 📄 DiaryentryScreen.kt
 package com.example.jotnroll
 
 import android.content.Intent
@@ -53,9 +54,8 @@ class DiaryentryScreen : AppCompatActivity() {
                     "title"    to title,
                     "date"     to date,
                     "content"  to content,
-                    "timestamp" to FieldValue.serverTimestamp()
+                    "timestamp" to FieldValue.serverTimestamp() // ✅ Always set timestamp
                 )
-
 
                 db.collection("entries")
                     .add(entry)
@@ -72,7 +72,7 @@ class DiaryentryScreen : AppCompatActivity() {
             }
         }
 
-            btnBack.setOnClickListener {
+        btnBack.setOnClickListener {
             startActivity(Intent(this, UserdashboardScreen::class.java))
             finish()
         }

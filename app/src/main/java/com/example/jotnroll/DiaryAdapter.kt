@@ -9,19 +9,17 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 data class DiaryEntry(
-    val id: String = "",  // use `doc.id` when retrieving
-    val userId: String = "",
+    val id: String = "",
     val userName: String = "",
     val title: String = "",
+    val date: String = "",
     val content: String = "",
-    val date: Timestamp? = null // or use `String`, just be consistent
+    val email: String = ""
 )
-
 
 class DiaryAdapter(
     private val context: Context,
@@ -38,8 +36,8 @@ class DiaryAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EntryViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_diary_entry, parent, false)
-
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_diary_entry, parent, false)
         return EntryViewHolder(view)
     }
 
@@ -49,13 +47,12 @@ class DiaryAdapter(
         holder.nameText.text = entry.userName
         holder.titleText.text = entry.title
         holder.dateText.text = entry.date
-
-        // Preview only the first 100 characters of the content
         holder.contentText.text = if (entry.content.length > 100)
             entry.content.take(100) + "..."
         else
             entry.content
 
+        // ✅ View button: pass data to ViewEntry
         holder.viewBtn.setOnClickListener {
             val intent = Intent(context, ViewEntry::class.java).apply {
                 putExtra("userName", entry.userName)
@@ -66,6 +63,7 @@ class DiaryAdapter(
             context.startActivity(intent)
         }
 
+        // ✅ Delete button: only allow owner to delete
         holder.deleteBtn.setOnClickListener {
             val user = FirebaseAuth.getInstance().currentUser
             if (user != null && user.email == entry.email) {

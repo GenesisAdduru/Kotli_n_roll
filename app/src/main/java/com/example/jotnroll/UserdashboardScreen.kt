@@ -28,7 +28,7 @@ class UserdashboardScreen : AppCompatActivity() {
         }
 
         binding.btnViewEntries.setOnClickListener {
-            startActivity(Intent(this, ViewEntry::class.java))
+            startActivity(Intent(this, ItemDiaryEntry::class.java))
         }
     }
 }
