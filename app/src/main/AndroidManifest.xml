@@ -25,9 +25,6 @@
             android:name=".ItemDiaryEntry"
             android:exported="false" />
         <activity
-            android:name=".DiaryScreen"
-            android:exported="false" />
-        <activity
             android:name=".DiaryentryScreen"
             android:exported="false" />
         <activity
