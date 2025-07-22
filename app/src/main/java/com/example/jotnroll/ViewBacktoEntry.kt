@@ -1,5 +1,6 @@
 package com.example.jotnroll
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +9,7 @@ import com.example.jotnroll.databinding.ActivityItemDiaryEntryBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class ItemDiaryEntry : AppCompatActivity() {
+class ViewBacktoEntry : AppCompatActivity() {
 
     private lateinit var binding: ActivityItemDiaryEntryBinding
     private lateinit var diaryAdapter: DiaryAdapter
@@ -26,6 +27,7 @@ class ItemDiaryEntry : AppCompatActivity() {
         fetchUserEntries()
 
         binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, DiaryentryScreen::class.java))
             finish()
         }
     }

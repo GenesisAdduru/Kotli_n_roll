@@ -30,7 +30,7 @@
     <string name="Owen">"Created the layout design for the screens and maintained the first screen, login and sign up screen."</string>
     <string name="Jose">Created the database for the application’s authentication and store data.</string>
     <string name="Vince">Created the logistics of the application, handling the inputs and outputs.</string>
-    <string name="dateval">Date (e.g. 7/19/2025</string>
+    <string name="dateval">Date (e.g. July 20, 2025)</string>
     <string name="your">Your Diary Entries</string>
     <string name="beck">back</string>
     <string name="newdiary">New Diary Entry</string>
@@ -40,4 +40,6 @@
     <string name="back">Back</string>
     <string name="confirm">Confirm</string>
     <string name="welcome">Welcome to Your Diary!</string>
+    <string name="diarytitle">Diary Title\n</string>
+    <string name="write">Write your diary here...</string>
 </resources>

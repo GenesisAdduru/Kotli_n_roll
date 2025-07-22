@@ -9,7 +9,7 @@
     android:background="@android:color/white"
     tools:context=".FirstScreen">
 
-    <!-- App Logo -->
+
     <ImageView
         android:id="@+id/appLogo"
         android:layout_width="500dp"

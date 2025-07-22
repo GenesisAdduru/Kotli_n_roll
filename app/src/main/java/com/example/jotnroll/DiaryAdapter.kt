@@ -52,7 +52,6 @@ class DiaryAdapter(
         else
             entry.content
 
-        // ✅ View button: pass data to ViewEntry
         holder.viewBtn.setOnClickListener {
             val intent = Intent(context, ViewEntry::class.java).apply {
                 putExtra("userName", entry.userName)
@@ -63,7 +62,6 @@ class DiaryAdapter(
             context.startActivity(intent)
         }
 
-        // ✅ Delete button: only allow owner to delete
         holder.deleteBtn.setOnClickListener {
             val user = FirebaseAuth.getInstance().currentUser
             if (user != null && user.email == entry.email) {

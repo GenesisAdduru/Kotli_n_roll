@@ -33,16 +33,13 @@ class LoginScreen : AppCompatActivity() {
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener {
-                    // Now check if user exists in Firestore
                     val uid = auth.currentUser?.uid ?: return@addOnSuccessListener
                     firestore.collection("users").document(uid).get()
                         .addOnSuccessListener { document ->
                             if (document.exists()) {
-                                // ✅ User exists in both Auth and Firestore
                                 startActivity(Intent(this, UserdashboardScreen::class.java))
                                 finish()
                             } else {
-                                // ❌ User doesn't exist in Firestore — possibly deleted
                                 Toast.makeText(this, "No profile found. Contact support.", Toast.LENGTH_SHORT).show()
                                 auth.signOut()
                             }

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/about_us_layout"
     android:layout_width="match_parent"
@@ -8,210 +7,117 @@
     android:padding="16dp"
     tools:context=".AboutusScreen">
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnBack"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/about_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="@string/about"
+                android:textColor="@color/orange"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/dev1_image"
+                        android:layout_width="153dp"
+                        android:layout_height="143dp"
+                        android:contentDescription="@string/dev1"
+                        android:src="@drawable/dev1" />
+
+                    <TextView android:id="@+id/dev1_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/dev1" android:textColor="@color/orange" android:textSize="14sp" />
+                    <TextView android:id="@+id/vince" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vince" android:textSize="12sp" android:textAlignment="center" android:layout_marginTop="4dp" />
+                    <TextView android:id="@+id/Vince" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Vince" android:textSize="12sp" android:textAlignment="center" android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView android:id="@+id/dev2_image" android:layout_width="147dp" android:layout_height="142dp" android:contentDescription="@string/dev2" android:src="@drawable/dev2" />
+                    <TextView android:id="@+id/dev2_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/dev2" android:textColor="@color/orange" android:textSize="14sp" />
+                    <TextView android:id="@+id/jose" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/jose" android:textSize="12sp" android:textAlignment="center" android:layout_marginTop="4dp" />
+                    <TextView android:id="@+id/Jose" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Jose" android:textSize="12sp" android:textAlignment="center" android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView android:id="@+id/dev3_image" android:layout_width="147dp" android:layout_height="147dp" android:contentDescription="@string/dev3" android:src="@drawable/dev3" />
+                    <TextView android:id="@+id/dev3_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/dev3" android:textColor="@color/orange" />
+                    <TextView android:id="@+id/sam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sam" android:textSize="12sp" android:textAlignment="center" android:layout_marginTop="4dp" />
+                    <TextView android:id="@+id/Sam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Sam" android:textSize="12sp" android:textAlignment="center" android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView android:id="@+id/dev4_image" android:layout_width="154dp" android:layout_height="147dp" android:contentDescription="@string/dev4" android:src="@drawable/dev4" />
+                    <TextView android:id="@+id/dev4_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/dev4" android:textColor="@color/orange" android:textSize="14sp" />
+                    <TextView android:id="@+id/owen" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/owen" android:textSize="12sp" android:textAlignment="center" android:layout_marginTop="4dp" />
+                    <TextView android:id="@+id/Owen" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Owen" android:textSize="12sp" android:textAlignment="center" android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
-
-        <!-- Title -->
-        <TextView
-            android:id="@+id/about_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="@string/about"
-            android:textColor="@color/orange"
-            android:textSize="19sp"
-            android:textStyle="bold" />
-
-        <!-- Row 1: Dev1 & Dev2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="24dp">
-
-            <!-- Dev 1 -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <ImageView
-                    android:id="@+id/dev1_image"
-                    android:layout_width="153dp"
-                    android:layout_height="143dp"
-                    android:contentDescription="@string/dev1"
-                    android:src="@drawable/dev1" />
-
-                <TextView
-                    android:id="@+id/dev1_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/dev1"
-                    android:textColor="@color/orange"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/vince"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/vince"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:layout_marginTop="4dp" />
-
-                <TextView
-                    android:id="@+id/Vince"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Vince"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:layout_marginTop="4dp" />
-            </LinearLayout>
-
-            <!-- Dev 2 -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <ImageView
-                    android:id="@+id/dev2_image"
-                    android:layout_width="147dp"
-                    android:layout_height="142dp"
-                    android:contentDescription="@string/dev2"
-                    android:src="@drawable/dev2" />
-
-                <TextView
-                    android:id="@+id/dev2_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/dev2"
-                    android:textColor="@color/orange"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/jose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/jose"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:layout_marginTop="4dp" />
-
-                <TextView
-                    android:id="@+id/Jose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Jose"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:layout_marginTop="4dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Row 2: Dev3 & Dev4 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="24dp">
-
-            <!-- Dev 3 -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <ImageView
-                    android:id="@+id/dev3_image"
-                    android:layout_width="147dp"
-                    android:layout_height="147dp"
-                    android:contentDescription="@string/dev3"
-                    android:src="@drawable/dev3" />
-
-                <TextView
-                    android:id="@+id/dev3_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/dev3"
-                    android:textColor="@color/orange" />
-
-                <TextView
-                    android:id="@+id/sam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sam"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:layout_marginTop="4dp" />
-
-                <TextView
-                    android:id="@+id/Sam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Sam"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:layout_marginTop="4dp" />
-            </LinearLayout>
-
-            <!-- Dev 4 -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <ImageView
-                    android:id="@+id/dev4_image"
-                    android:layout_width="154dp"
-                    android:layout_height="147dp"
-                    android:contentDescription="@string/dev4"
-                    android:src="@drawable/dev4" />
-
-                <TextView
-                    android:id="@+id/dev4_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/dev4"
-                    android:textColor="@color/orange"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/owen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/owen"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:layout_marginTop="4dp" />
-
-                <TextView
-                    android:id="@+id/Owen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Owen"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:layout_marginTop="4dp" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+        android:text="@string/back"
+        android:backgroundTint="#64B5F6"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

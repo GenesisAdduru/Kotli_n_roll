@@ -1,5 +1,6 @@
 package com.example.jotnroll
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jotnroll.databinding.ActivityViewEntryBinding
@@ -13,19 +14,19 @@ class ViewEntry : AppCompatActivity() {
         binding = ActivityViewEntryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // ✅ Get the extras passed from DiaryAdapter
         val userName = intent.getStringExtra("userName") ?: ""
         val title = intent.getStringExtra("title") ?: ""
         val date = intent.getStringExtra("date") ?: ""
         val content = intent.getStringExtra("content") ?: ""
 
-        // ✅ Show on screen
         binding.textViewViewName.text = userName
         binding.textViewViewTitle.text = title
         binding.textViewViewDate.text = date
         binding.textViewViewContent.text = content
 
         binding.buttonBackView.setOnClickListener {
+            val intent = Intent(this, ItemDiaryEntry::class.java)
+            startActivity(intent)
             finish()
         }
     }

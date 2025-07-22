@@ -1,4 +1,3 @@
-// 📄 SignupScreen.kt
 package com.example.jotnroll
 
 import android.content.Intent
@@ -82,7 +81,6 @@ class SignupScreen : AppCompatActivity() {
         validateOnChange(binding.etLastName, { it.length >= 2 }, "Last name must be at least 2 characters")
         validateOnChange(binding.etUsername, { it.length >= 8 }, "Username must be at least 8 characters")
 
-        // Email format
         binding.etEmail.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val email = s.toString()
@@ -94,7 +92,6 @@ class SignupScreen : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        // Password validation
         binding.etPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val pwd = s.toString()
@@ -107,7 +104,6 @@ class SignupScreen : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        // Confirm password
         binding.etConfirmPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) = validatePasswordMatch()
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}

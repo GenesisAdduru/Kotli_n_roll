@@ -9,7 +9,7 @@
     android:padding="24dp"
     tools:context=".UserdashboardScreen">
 
-    <!-- Logout Icon at Top-Right -->
+
 
     <TextView
         android:id="@+id/welcomeText"
@@ -25,7 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Create Entry Custom Button -->
+
     <LinearLayout
         android:id="@+id/btnCreateEntry"
         android:layout_width="0dp"
@@ -57,7 +57,7 @@
             android:paddingStart="8dp" />
     </LinearLayout>
 
-    <!-- View Entries Custom Button -->
+
     <LinearLayout
         android:id="@+id/btnViewEntries"
         android:layout_width="0dp"
@@ -89,7 +89,6 @@
             android:paddingStart="8dp" />
     </LinearLayout>
 
-    <!-- About Us Button -->
     <Button
         android:id="@+id/btnAboutUs"
         android:layout_width="0dp"
@@ -102,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
-    <!-- Logout Button (optional if you keep the icon only) -->
+
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="0dp"

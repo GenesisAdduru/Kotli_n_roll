@@ -13,20 +13,21 @@
         android:id="@+id/diary_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Diary Entry"
+        android:text="@string/newdiary"
         android:textColor="@color/orange"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="26dp"
         android:layout_marginBottom="16dp" />
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Your Name"
+        android:hint="@string/your"
         android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@id/diary_title"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,7 @@
         android:id="@+id/editTextTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Diary Title"
+        android:hint="@string/diarytitle"
         android:inputType="textCapSentences"
         app:layout_constraintTop_toBottomOf="@id/editTextName"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,18 +49,19 @@
         android:id="@+id/editTextDate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Date (e.g. July 20, 2025)"
+        android:hint="@string/dateval"
         android:inputType="text"
         app:layout_constraintTop_toBottomOf="@id/editTextTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        tools:ignore="TextFields" />
 
     <EditText
         android:id="@+id/editTextDiary"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:hint="Write your diary here..."
+        android:hint="@string/write"
         android:gravity="top"
         android:background="@android:drawable/edit_text"
         android:minLines="10"
@@ -75,18 +77,19 @@
         android:id="@+id/buttonSubmit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="@string/submit"
         android:backgroundTint="@color/orange"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@id/buttonBack"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
 
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="@string/back"
         android:backgroundTint="#64B5F6"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
